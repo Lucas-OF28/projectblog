@@ -1,32 +1,30 @@
 const mongoose = require("mongoose")
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 const Postagem = new Schema({
-  titulo:{
+  titulo: {
     type: String,
     required: true
   },
-  slug:{
+  slug: {
     type: String,
     required: true
   },
-  descricao:{
+  descricao: {
     type: String,
     required: true
   },
-  conteudo:{
+  conteudo: {
     type: String,
     required: true
   },
   categoria: {
-    type: Schemas.Types.ObjectId,
-    ref: categorias,
-    required: true
+    type: Schema.Types.ObjectId,
+    required: true  
   },
-  data:{
+  data: {
     type: Date,
     default: Date.now()
   }
 })
-
 mongoose.model("postagens", Postagem)
